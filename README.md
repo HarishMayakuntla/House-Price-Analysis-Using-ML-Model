@@ -102,22 +102,23 @@ House-Price-Prediction-ML/
 
 ## 📈 Project Development Plan
 
-This project is being developed step-by-step over 14 days.
+This project is being developed step-by-step .
 
-* Day 1 – Repository, README and project structure
-* Day 2 – Dataset and data dictionary
-* Day 3 – Exploratory Data Analysis
-* Day 4 – Data cleaning
-* Day 5 – Feature engineering
-* Day 6 – Encoding and preprocessing
-* Day 7 – Linear Regression
-* Day 8 – Random Forest
-* Day 9 – Gradient Boosting
-* Day 10 – Model comparison
-* Day 11 – Hyperparameter tuning
-* Day 12 – Prediction script
-* Day 13 – Documentation
-* Day 14 – Final README and screenshots
+* Repository, README and project structure
+* Dataset and data dictionary
+* Exploratory Data Analysis
+* Data cleaning
+* Feature engineering
+* Encoding and preprocessing
+* Linear Regression
+* Random Forest
+* Gradient Boosting
+* XGBoost
+* Model comparison
+* Hyperparameter tuning
+* Prediction script
+* Documentation
+* Final README and screenshots
 
 ## 🚧 Project Status
 
