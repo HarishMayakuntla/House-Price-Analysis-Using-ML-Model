@@ -10,7 +10,7 @@ df.head() # check the top five rows for data understanding
 
 df.shape # check the dimentions
 
-x=df.drop('price','size','price_per_sqft',axis=1) # create the input features
+x=df.drop('price','size','price_per_sqft','availability',axis=1) # create the input features
 y=df['price'] # create output(target) feature
 
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42) # split the data for training ,testing 
