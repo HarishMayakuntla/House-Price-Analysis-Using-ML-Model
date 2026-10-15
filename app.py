@@ -17,6 +17,11 @@ BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "model" / "House_price_prediction_model.pkl"
 PREPROCESSOR_PATH = BASE_DIR / "model" / "House_price_preprocessor.pkl"
 
+def format_price(price_lakhs):
+    if price_lakhs >= 100:
+        return f"₹ {price_lakhs / 100:.2f} Crore"
+    return f"₹ {price_lakhs:.2f} Lakhs"
+
 try:
     model = joblib.load(MODEL_PATH)
     preprocessor = joblib.load(PREPROCESSOR_PATH)
@@ -114,15 +119,28 @@ if st.button("Predict House Price", type="primary"):
             # Display result
             st.success("Prediction completed!")
 
-            st.metric(
-                label="Estimated House Price",
-                value=f"₹ {prediction:.2f} Lakhs"
+            
+            st.subheader("🏡 Estimated Property Value")
+            
+            col1, col2 = st.columns(2)
+            
+            with col1:
+                st.metric(
+                    "Estimated Price",
+                    format_price(float(prediction))
+                )
+            
+            with col2:
+                st.metric(
+                    "Price in Lakhs",
+                    f"₹ {float(prediction):.2f} L"
+                )
+            
+            st.info(
+                "This is a machine learning estimate, "
+                "not an official property valuation."
             )
 
-            st.caption(
-                "This is an estimated price. "
-                "Actual market prices may vary."
-            )
 
         except Exception as e:
             st.error(f"Prediction failed: {e}")
