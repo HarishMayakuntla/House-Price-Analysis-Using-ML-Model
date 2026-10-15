@@ -14,7 +14,7 @@ st.set_page_config(
 # 2. Load model and preprocessor
 BASE_DIR = Path(__file__).resolve().parent
 
-MODEL_PATH = BASE_DIR / "model" / "house_price_prediction_model.pkl"
+MODEL_PATH = BASE_DIR / "model" / "House_price_prediction_model.pkl"
 PREPROCESSOR_PATH = BASE_DIR / "model" / "House_price_preprocessor.pkl"
 
 try:
