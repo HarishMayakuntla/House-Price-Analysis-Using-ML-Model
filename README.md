@@ -1,143 +1,149 @@
-# House Price Prediction Using Machine Learning
+# 🏠 Bengaluru House Price Prediction Using Machine Learning
+
+An end-to-end Machine Learning project that predicts estimated residential property prices in Bengaluru based on property features. The project includes data analysis, preprocessing, feature engineering, model training, evaluation, and a deployed Streamlit web application.
+
+<p align="center">
+
+  **🚀 Live Demo:** [Try the House Price Prediction App](https://house-price-prediction-harish.streamlit.app/)
+
+  **💻 GitHub Repository:** [House-Price-Analysis-Using-ML-Model](https://github.com/HarishMayakuntla/House-Price-Analysis-Using-ML-Model)
+
+</p>
+
+---
 
 ## 📌 Project Overview
 
-This project focuses on predicting house prices using Machine Learning algorithms and the Bengaluru House Price dataset.
+House prices depend on several factors, including location, property size, number of bedrooms, bathrooms, and property type.
 
-The project follows an end-to-end Machine Learning workflow, including data exploration, data cleaning, feature engineering, preprocessing, model training, model evaluation, and hyperparameter tuning.
+This project uses Machine Learning regression algorithms to learn patterns from Bengaluru housing data and estimate property prices from user-provided details.
 
-The main objective is to compare multiple regression algorithms and identify a suitable model for house price prediction.
+The trained model and preprocessing pipeline are integrated into a Streamlit application, allowing users to make predictions through an interactive web interface.
 
-## 🎯 Objectives
+## ✨ Key Features
 
-- Explore and understand the dataset using Exploratory Data Analysis (EDA).
-- Handle missing values and duplicate records.
-- Clean and prepare the dataset.
-- Perform feature engineering.
-- Encode categorical features and scale numerical features.
-- Train multiple Machine Learning regression models.
-- Evaluate models using MAE, RMSE, and R².
-- Compare baseline models and perform hyperparameter tuning.
-- Save the model and preprocessing pipeline for future predictions.
+- Predict estimated Bengaluru residential property prices.
+- Interactive web interface built with Streamlit.
+- Accepts location, area type, square footage, BHK, bathrooms, and balconies.
+- Performs feature engineering and data preprocessing.
+- Experiments with multiple regression algorithms.
+- Evaluates models using standard regression metrics.
+- Saves and loads the trained model and preprocessing pipeline.
+- Deployed web application accessible through a public URL.
 
-## 🛠️ Technologies Used
+## 🛠️ Tech Stack
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Scikit-learn
-- XGBoost
-- Jupyter Notebook
-- Joblib
-- Git and GitHub
+| Technology | Purpose |
+|---|---|
+| Python | Core programming language |
+| Pandas | Data manipulation and analysis |
+| NumPy | Numerical computing |
+| Matplotlib & Seaborn | Exploratory data visualization |
+| Scikit-learn | Preprocessing, regression, and evaluation |
+| XGBoost | Gradient-boosted regression |
+| Joblib | Saving and loading model artifacts |
+| Streamlit | Interactive web application |
+| Git & GitHub | Version control and source code hosting |
+| Streamlit Community Cloud | Web application deployment |
 
-## Dataset
+## 📂 Dataset and Features
 
-The project uses the Bengaluru House Price dataset.
+The project uses Bengaluru house price data.
+
+The main features used by the application include:
+
+| Feature | Description |
+|---|---|
+| `area_type` | Type of property area |
+| `location` | Property location |
+| `total_sqft` | Total area in square feet |
+| `bath` | Number of bathrooms |
+| `balcony` | Number of balconies |
+| `BHK` | Number of bedrooms, hall, and kitchen |
+| `sqft_per_bhk` | Total square feet divided by BHK |
 
 **Target variable:** `price`
 
-**Input features used for modelling:**
+The target price is used during training. At prediction time, the model receives property details and estimates the price.
 
-- `area_type`
-- `location`
-- `total_sqft`
-- `bath`
-- `balcony`
-- `BHK`
-- `sqft_per_bhk`
+## 🔄 Machine Learning Workflow
 
-The `price_per_sqft` feature is excluded from model inputs because it is calculated using the target price and could cause target leakage.
+1. **Data Understanding:** Inspect dataset structure, columns, and data types.
+2. **Exploratory Data Analysis:** Examine distributions, missing values, relationships, and outliers.
+3. **Data Cleaning:** Handle missing values and prepare data for modeling.
+4. **Feature Engineering:** Create useful features such as `sqft_per_bhk`.
+5. **Preprocessing:** Impute missing values, scale numerical features, and encode categorical features.
+6. **Model Training:** Train and compare regression algorithms.
+7. **Model Evaluation:** Evaluate predictions using MAE, RMSE, and R².
+8. **Hyperparameter Tuning:** Search for improved model configurations.
+9. **Model Serialization:** Save the trained model and preprocessing pipeline using Joblib.
+10. **Deployment:** Build and deploy the Streamlit prediction application.
 
-## 🤖 Machine Learning Algorithms
+## 🤖 Models Explored
 
-The following regression algorithms were evaluated:
+The project explores regression algorithms including:
 
-1. Linear Regression
-2. Decision Tree Regressor
-3. Random Forest Regressor
-4. Gradient Boosting Regressor
-5. XGBoost Regressor
+- Linear Regression
+- Decision Tree Regressor
+- Random Forest Regressor
+- Gradient Boosting Regressor
+- XGBoost Regressor
 
-## 🔄 Project Workflow
+### Evaluation Metrics
 
-1. Dataset collection and understanding
-2. Exploratory Data Analysis (EDA)
-3. Data cleaning
-4. Feature engineering
-5. Train-test split
-6. Data preprocessing
-7. Model training
-8. Model evaluation and comparison
-9. Hyperparameter tuning
-10. Model saving
-11. House price prediction
+- **MAE — Mean Absolute Error:** Average absolute difference between actual and predicted prices.
+- **RMSE — Root Mean Squared Error:** Measures prediction error while penalizing larger errors more heavily.
+- **R² Score:** Measures how much variation in the target is explained by the model.
 
-## 📊 Model Evaluation
+The best model should be selected based on evaluation results on held-out data, not training performance alone.
 
-The baseline models were evaluated using the same train-test split and the following metrics.
+## 🌐 Live Application
 
-| Model | MAE | RMSE | R² |
-|---|---:|---:|---:|
-| Linear Regression | 45.2360 | 125.3719 | 0.4592 |
-| Decision Tree | 40.3996 | 120.8564 | 0.4975 |
-| Random Forest | 33.3099 | 100.3635 | 0.6534 |
-| Gradient Boosting | 39.1581 | 101.4037 | 0.6462 |
-| XGBoost | 35.1745 | 94.4562 | 0.6930 |
+Try the deployed application:
 
-### Baseline Model Comparison
+👉 **[Open House Price Prediction](https://house-price-prediction-harish.streamlit.app/)**
 
-- **Best R²:** XGBoost — 0.6930
-- **Lowest RMSE:** XGBoost — 94.4562
-- **Lowest MAE:** Random Forest — 33.3099
+### How to Use
 
-Based on the current baseline results, XGBoost is the leading candidate overall, while Random Forest has the lowest MAE.
+1. Open the live application.
+2. Select the property area type.
+3. Enter the property location.
+4. Enter the total square footage.
+5. Specify the number of bathrooms, balconies, and BHK.
+6. Click **Predict House Price**.
+7. View the estimated property value.
 
-*Note: Metric values are in the dataset's target-price units. The results represent the current experiment and should be revalidated before deployment.*
-
-## Hyperparameter Tuning
-
-GridSearchCV was used to tune the XGBoost model.
-
-Best parameters from the current search:
-
-- `learning_rate`: 0.1
-- `max_depth`: 3
-- `n_estimators`: 200
-- `subsample`: 1.0
-
-The tuned model achieved the following test results:
-
-| Metric | Tuned XGBoost |
-|---|---:|
-| MAE | 38.7673 |
-| RMSE | 101.7191 |
-| R² | 0.6440 |
-
-The tuned model did not outperform the baseline XGBoost model in this experiment. Therefore, the baseline remains the better candidate based on the current test results.
-
-## Project Structure
+## 📁 Repository Structure
 
 ```text
 House-Price-Analysis-Using-ML-Model/
 │
 ├── data/
-├── notebook/
+│   └── Dataset and data documentation
+│
 ├── model/
+│   ├── House_price_prediction_model.pkl
+│   └── House_price_preprocessor.pkl
+│
+├── notebook/
+│   └── Jupyter notebooks for analysis and modeling
+│
 ├── output/
+│   └── Analysis plots and model results
+│
 ├── src/
-├── LICENSE
-└── README.md
+│   └── Data cleaning, feature engineering,
+│       preprocessing, and prediction code
+│
+├── app.py
+├── requirements.txt
+├── README.md
+└── LICENSE
 ```
 
-## 📊Evaluation Metrics
+*The structure above describes the intended project layout. Confirm the actual filenames in the repository before relying on the file list.*
 
-- **MAE (Mean Absolute Error):** Measures the average absolute difference between actual and predicted prices. Lower is better.
-- **RMSE (Root Mean Squared Error):** Penalizes larger prediction errors. Lower is better.
-- **R² Score:** Measures how well the model explains the variation in the target. Higher is generally better.
-
-## How to Run the Project
+## 💻 Run Locally
 
 ### 1. Clone the repository
 
@@ -145,35 +151,48 @@ House-Price-Analysis-Using-ML-Model/
 git clone https://github.com/HarishMayakuntla/House-Price-Analysis-Using-ML-Model.git
 ```
 
-### 2. Open the project folder
+### 2. Navigate to the project folder
 
 ```bash
 cd House-Price-Analysis-Using-ML-Model
 ```
 
-### 3. Install the required libraries
+### 3. Create a virtual environment
 
 ```bash
-pip install pandas numpy matplotlib scikit-learn xgboost joblib jupyter
+python -m venv venv
 ```
 
-### 4. Explore the notebooks
+Activate the environment on Windows:
 
-Open Jupyter Notebook and run the notebooks in the appropriate workflow order.
+```powershell
+.\venv\Scripts\Activate.ps1
+```
+
+### 4. Install dependencies
 
 ```bash
-jupyter notebook
+pip install -r requirements.txt
 ```
 
-*Note: Run the prediction script only after the trained model and matching fitted preprocessor have been saved to the expected paths.*
+### 5. Run the application
 
-## 📈 Future Improvements
+```bash
+streamlit run app.py
+```
 
-- Further improve model performance through feature selection and tuning.
-- Validate predictions on unseen data.
-- Build a user-friendly prediction interface.
-- Deploy the model using FastAPI or Streamlit.
-- Add visualizations and prediction examples.
+Open the local URL displayed in the terminal.
+
+**Note:** Keep the trained model and preprocessing files in the `model/` directory, using the exact filenames referenced in `app.py`.
+
+## ⚠️ Limitations
+
+- Predictions are estimates and may differ from actual market prices.
+- Accuracy depends on the quality, coverage, and relevance of the training data.
+- Unseen locations may receive predictions even when the model has not learned location-specific patterns for them.
+- Property prices change over time, so retraining with more recent data may be necessary.
+
+This application is intended for educational and informational purposes, not as an official property valuation tool.
 
 ## 👨‍💻 Author
 
@@ -181,10 +200,13 @@ jupyter notebook
 
 Aspiring Data Scientist | Machine Learning | Python | SQL
 
-GitHub: [HarishMayakuntla](https://github.com/HarishMayakuntla)
+- **GitHub:** [HarishMayakuntla](https://github.com/HarishMayakuntla)
+- **LinkedIn:** [Harish Mayakuntla](https://www.linkedin.com/in/harish-mayakuntla/)
 
-## 🚧 Project Status
+## 🎯 Project Objective
 
-**Currently under development.**
+To develop practical end-to-end Machine Learning skills by building a complete regression project, evaluating different algorithms, and deploying a model as an interactive web application.
 
-New features, experiments, results, and documentation will be added progressively throughout the project.
+---
+
+⭐ If you find this project interesting, explore the repository and try the live demo.
